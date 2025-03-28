@@ -1,0 +1,2 @@
+[console_scripts]
+firebase_listener_node = connectFirebasePkg.firebase_listener_node:main

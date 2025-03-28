@@ -1,0 +1,24 @@
+[1.190s] Invoking command in '/home/josh/robot-ws/src/connectFirebasePkg/build/connectFirebasePkg': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/josh/robot-ws/src/connectFirebasePkg/build/connectFirebasePkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/josh/robot-ws/src/connectFirebasePkg/install/connectFirebasePkg/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/josh/robot-ws/src/connectFirebasePkg/build/connectFirebasePkg/build --no-deps symlink_data
+[1.632s] running develop
+[1.896s] running egg_info
+[1.897s] creating connectFirebasePkg.egg-info
+[1.922s] writing connectFirebasePkg.egg-info/PKG-INFO
+[1.923s] writing dependency_links to connectFirebasePkg.egg-info/dependency_links.txt
+[1.923s] writing entry points to connectFirebasePkg.egg-info/entry_points.txt
+[1.923s] writing requirements to connectFirebasePkg.egg-info/requires.txt
+[1.923s] writing top-level names to connectFirebasePkg.egg-info/top_level.txt
+[1.923s] writing manifest file 'connectFirebasePkg.egg-info/SOURCES.txt'
+[1.976s] reading manifest file 'connectFirebasePkg.egg-info/SOURCES.txt'
+[1.977s] writing manifest file 'connectFirebasePkg.egg-info/SOURCES.txt'
+[2.006s] running build_ext
+[2.006s] Creating /home/josh/robot-ws/src/connectFirebasePkg/install/connectFirebasePkg/lib/python3.12/site-packages/connectFirebasePkg.egg-link (link to .)
+[2.007s] Installing firebase_listener_node script to /home/josh/robot-ws/src/connectFirebasePkg/install/connectFirebasePkg/lib/connectFirebasePkg
+[2.007s] 
+[2.007s] Installed /home/josh/robot-ws/src/connectFirebasePkg/build/connectFirebasePkg
+[2.008s] running symlink_data
+[2.008s] creating /home/josh/robot-ws/src/connectFirebasePkg/install/connectFirebasePkg/share/ament_index
+[2.008s] creating /home/josh/robot-ws/src/connectFirebasePkg/install/connectFirebasePkg/share/ament_index/resource_index
+[2.008s] creating /home/josh/robot-ws/src/connectFirebasePkg/install/connectFirebasePkg/share/ament_index/resource_index/packages
+[2.008s] symbolically linking /home/josh/robot-ws/src/connectFirebasePkg/build/connectFirebasePkg/resource/connectFirebasePkg -> /home/josh/robot-ws/src/connectFirebasePkg/install/connectFirebasePkg/share/ament_index/resource_index/packages
+[2.008s] symbolically linking /home/josh/robot-ws/src/connectFirebasePkg/build/connectFirebasePkg/package.xml -> /home/josh/robot-ws/src/connectFirebasePkg/install/connectFirebasePkg/share/connectFirebasePkg
+[2.102s] Invoked command in '/home/josh/robot-ws/src/connectFirebasePkg/build/connectFirebasePkg' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/josh/robot-ws/src/connectFirebasePkg/build/connectFirebasePkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/josh/robot-ws/src/connectFirebasePkg/install/connectFirebasePkg/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/josh/robot-ws/src/connectFirebasePkg/build/connectFirebasePkg/build --no-deps symlink_data

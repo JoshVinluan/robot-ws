@@ -1,0 +1,13 @@
+package.xml
+setup.cfg
+setup.py
+connectFirebasePkg/__init__.py
+connectFirebasePkg/firebase_listener_node.py
+connectFirebasePkg.egg-info/PKG-INFO
+connectFirebasePkg.egg-info/SOURCES.txt
+connectFirebasePkg.egg-info/dependency_links.txt
+connectFirebasePkg.egg-info/entry_points.txt
+connectFirebasePkg.egg-info/requires.txt
+connectFirebasePkg.egg-info/top_level.txt
+connectFirebasePkg.egg-info/zip-safe
+resource/connectFirebasePkg
