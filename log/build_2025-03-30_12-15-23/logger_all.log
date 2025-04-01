@@ -1,0 +1,171 @@
+[0.266s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install']
+[0.266s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=True, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=4, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0xffffa53b8320>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0xffffa556c080>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0xffffa556c080>>, mixin_verb=('build',))
+[0.387s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.388s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.388s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.388s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.388s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.388s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.388s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/josh/robot-ws/src'
+[0.388s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.388s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.388s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.388s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.388s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.388s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.388s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.388s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.388s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.444s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.444s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.444s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.444s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.444s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.444s] Level 1:colcon.colcon_core.package_identification:_identify(SerialCommsPkg) by extensions ['ignore', 'ignore_ament_install']
+[0.444s] Level 1:colcon.colcon_core.package_identification:_identify(SerialCommsPkg) by extension 'ignore'
+[0.444s] Level 1:colcon.colcon_core.package_identification:_identify(SerialCommsPkg) by extension 'ignore_ament_install'
+[0.445s] Level 1:colcon.colcon_core.package_identification:_identify(SerialCommsPkg) by extensions ['colcon_pkg']
+[0.445s] Level 1:colcon.colcon_core.package_identification:_identify(SerialCommsPkg) by extension 'colcon_pkg'
+[0.445s] Level 1:colcon.colcon_core.package_identification:_identify(SerialCommsPkg) by extensions ['colcon_meta']
+[0.445s] Level 1:colcon.colcon_core.package_identification:_identify(SerialCommsPkg) by extension 'colcon_meta'
+[0.445s] Level 1:colcon.colcon_core.package_identification:_identify(SerialCommsPkg) by extensions ['ros']
+[0.445s] Level 1:colcon.colcon_core.package_identification:_identify(SerialCommsPkg) by extension 'ros'
+[0.455s] DEBUG:colcon.colcon_core.package_identification:Package 'SerialCommsPkg' with type 'ros.ament_python' and name 'SerialCommsPkg'
+[0.455s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.455s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.455s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.455s] Level 1:colcon.colcon_core.package_identification:_identify(connectFirebasePkg) by extensions ['ignore', 'ignore_ament_install']
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(connectFirebasePkg) by extension 'ignore'
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(connectFirebasePkg) by extension 'ignore_ament_install'
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(connectFirebasePkg) by extensions ['colcon_pkg']
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(connectFirebasePkg) by extension 'colcon_pkg'
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(connectFirebasePkg) by extensions ['colcon_meta']
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(connectFirebasePkg) by extension 'colcon_meta'
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(connectFirebasePkg) by extensions ['ros']
+[0.456s] Level 1:colcon.colcon_core.package_identification:_identify(connectFirebasePkg) by extension 'ros'
+[0.457s] DEBUG:colcon.colcon_core.package_identification:Package 'connectFirebasePkg' with type 'ros.ament_python' and name 'connectFirebasePkg'
+[0.457s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.457s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.457s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.457s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.457s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.457s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.457s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.457s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.457s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.457s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.457s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.493s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.493s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.499s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 2 installed packages in /home/josh/robot-ws/install
+[0.501s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 285 installed packages in /opt/ros/jazzy
+[0.502s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[0.562s] Level 5:colcon.colcon_core.verb:set package 'SerialCommsPkg' build argument 'cmake_args' from command line to 'None'
+[0.562s] Level 5:colcon.colcon_core.verb:set package 'SerialCommsPkg' build argument 'cmake_target' from command line to 'None'
+[0.562s] Level 5:colcon.colcon_core.verb:set package 'SerialCommsPkg' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.563s] Level 5:colcon.colcon_core.verb:set package 'SerialCommsPkg' build argument 'cmake_clean_cache' from command line to 'False'
+[0.563s] Level 5:colcon.colcon_core.verb:set package 'SerialCommsPkg' build argument 'cmake_clean_first' from command line to 'False'
+[0.563s] Level 5:colcon.colcon_core.verb:set package 'SerialCommsPkg' build argument 'cmake_force_configure' from command line to 'False'
+[0.563s] Level 5:colcon.colcon_core.verb:set package 'SerialCommsPkg' build argument 'ament_cmake_args' from command line to 'None'
+[0.563s] Level 5:colcon.colcon_core.verb:set package 'SerialCommsPkg' build argument 'catkin_cmake_args' from command line to 'None'
+[0.563s] Level 5:colcon.colcon_core.verb:set package 'SerialCommsPkg' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.563s] DEBUG:colcon.colcon_core.verb:Building package 'SerialCommsPkg' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/josh/robot-ws/src/build/SerialCommsPkg', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/josh/robot-ws/src/install/SerialCommsPkg', 'merge_install': False, 'path': '/home/josh/robot-ws/src/SerialCommsPkg', 'symlink_install': True, 'test_result_base': None}
+[0.563s] Level 5:colcon.colcon_core.verb:set package 'connectFirebasePkg' build argument 'cmake_args' from command line to 'None'
+[0.563s] Level 5:colcon.colcon_core.verb:set package 'connectFirebasePkg' build argument 'cmake_target' from command line to 'None'
+[0.563s] Level 5:colcon.colcon_core.verb:set package 'connectFirebasePkg' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.563s] Level 5:colcon.colcon_core.verb:set package 'connectFirebasePkg' build argument 'cmake_clean_cache' from command line to 'False'
+[0.563s] Level 5:colcon.colcon_core.verb:set package 'connectFirebasePkg' build argument 'cmake_clean_first' from command line to 'False'
+[0.563s] Level 5:colcon.colcon_core.verb:set package 'connectFirebasePkg' build argument 'cmake_force_configure' from command line to 'False'
+[0.563s] Level 5:colcon.colcon_core.verb:set package 'connectFirebasePkg' build argument 'ament_cmake_args' from command line to 'None'
+[0.563s] Level 5:colcon.colcon_core.verb:set package 'connectFirebasePkg' build argument 'catkin_cmake_args' from command line to 'None'
+[0.563s] Level 5:colcon.colcon_core.verb:set package 'connectFirebasePkg' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.563s] DEBUG:colcon.colcon_core.verb:Building package 'connectFirebasePkg' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/josh/robot-ws/src/build/connectFirebasePkg', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/josh/robot-ws/src/install/connectFirebasePkg', 'merge_install': False, 'path': '/home/josh/robot-ws/src/connectFirebasePkg', 'symlink_install': True, 'test_result_base': None}
+[0.564s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.565s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.565s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/josh/robot-ws/src/SerialCommsPkg' with build type 'ament_python'
+[0.565s] Level 1:colcon.colcon_core.shell:create_environment_hook('SerialCommsPkg', 'ament_prefix_path')
+[0.579s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.579s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/josh/robot-ws/src/install/SerialCommsPkg/share/SerialCommsPkg/hook/ament_prefix_path.ps1'
+[0.581s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/josh/robot-ws/src/install/SerialCommsPkg/share/SerialCommsPkg/hook/ament_prefix_path.dsv'
+[0.582s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/josh/robot-ws/src/install/SerialCommsPkg/share/SerialCommsPkg/hook/ament_prefix_path.sh'
+[0.583s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.583s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.588s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/josh/robot-ws/src/connectFirebasePkg' with build type 'ament_python'
+[0.588s] Level 1:colcon.colcon_core.shell:create_environment_hook('connectFirebasePkg', 'ament_prefix_path')
+[0.588s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/josh/robot-ws/src/install/connectFirebasePkg/share/connectFirebasePkg/hook/ament_prefix_path.ps1'
+[0.589s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/josh/robot-ws/src/install/connectFirebasePkg/share/connectFirebasePkg/hook/ament_prefix_path.dsv'
+[0.590s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/josh/robot-ws/src/install/connectFirebasePkg/share/connectFirebasePkg/hook/ament_prefix_path.sh'
+[0.591s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.591s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[0.938s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/josh/robot-ws/src/SerialCommsPkg'
+[0.938s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.938s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.263s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/josh/robot-ws/src/connectFirebasePkg'
+[1.263s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.263s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.622s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/josh/robot-ws/src/build/SerialCommsPkg': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PS1=\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/josh/robot-ws/src/build/SerialCommsPkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/josh/robot-ws/src/install/SerialCommsPkg/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/josh/robot-ws/src/build/SerialCommsPkg/build --no-deps symlink_data
+[2.637s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/josh/robot-ws/src/build/connectFirebasePkg': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PS1=\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/josh/robot-ws/src/build/connectFirebasePkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/josh/robot-ws/src/install/connectFirebasePkg/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/josh/robot-ws/src/build/connectFirebasePkg/build --no-deps symlink_data
+[3.844s] Level 1:colcon.colcon_core.shell:create_environment_hook('connectFirebasePkg', 'pythonpath_develop')
+[3.846s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/josh/robot-ws/src/build/connectFirebasePkg/share/connectFirebasePkg/hook/pythonpath_develop.ps1'
+[3.848s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/josh/robot-ws/src/build/connectFirebasePkg/share/connectFirebasePkg/hook/pythonpath_develop.dsv'
+[3.848s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/josh/robot-ws/src/build/connectFirebasePkg' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PS1=\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/josh/robot-ws/src/build/connectFirebasePkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/josh/robot-ws/src/install/connectFirebasePkg/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/josh/robot-ws/src/build/connectFirebasePkg/build --no-deps symlink_data
+[3.852s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/josh/robot-ws/src/build/connectFirebasePkg/share/connectFirebasePkg/hook/pythonpath_develop.sh'
+[3.887s] Level 1:colcon.colcon_core.environment:checking '/home/josh/robot-ws/src/install/connectFirebasePkg' for CMake module files
+[3.890s] Level 1:colcon.colcon_core.environment:checking '/home/josh/robot-ws/src/install/connectFirebasePkg' for CMake config files
+[3.891s] Level 1:colcon.colcon_core.environment:checking '/home/josh/robot-ws/src/install/connectFirebasePkg/lib'
+[3.892s] Level 1:colcon.colcon_core.environment:checking '/home/josh/robot-ws/src/install/connectFirebasePkg/bin'
+[3.892s] Level 1:colcon.colcon_core.environment:checking '/home/josh/robot-ws/src/install/connectFirebasePkg/lib/pkgconfig/connectFirebasePkg.pc'
+[3.893s] Level 1:colcon.colcon_core.environment:checking '/home/josh/robot-ws/src/install/connectFirebasePkg/lib/python3.12/site-packages'
+[3.893s] Level 1:colcon.colcon_core.shell:create_environment_hook('connectFirebasePkg', 'pythonpath')
+[3.893s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/josh/robot-ws/src/install/connectFirebasePkg/share/connectFirebasePkg/hook/pythonpath.ps1'
+[3.894s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/josh/robot-ws/src/install/connectFirebasePkg/share/connectFirebasePkg/hook/pythonpath.dsv'
+[3.895s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/josh/robot-ws/src/install/connectFirebasePkg/share/connectFirebasePkg/hook/pythonpath.sh'
+[3.897s] Level 1:colcon.colcon_core.environment:checking '/home/josh/robot-ws/src/install/connectFirebasePkg/bin'
+[3.897s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(connectFirebasePkg)
+[3.898s] INFO:colcon.colcon_core.shell:Creating package script '/home/josh/robot-ws/src/install/connectFirebasePkg/share/connectFirebasePkg/package.ps1'
+[3.906s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/josh/robot-ws/src/install/connectFirebasePkg/share/connectFirebasePkg/package.dsv'
+[3.911s] INFO:colcon.colcon_core.shell:Creating package script '/home/josh/robot-ws/src/install/connectFirebasePkg/share/connectFirebasePkg/package.sh'
+[3.912s] INFO:colcon.colcon_core.shell:Creating package script '/home/josh/robot-ws/src/install/connectFirebasePkg/share/connectFirebasePkg/package.bash'
+[3.914s] INFO:colcon.colcon_core.shell:Creating package script '/home/josh/robot-ws/src/install/connectFirebasePkg/share/connectFirebasePkg/package.zsh'
+[3.916s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/josh/robot-ws/src/install/connectFirebasePkg/share/colcon-core/packages/connectFirebasePkg)
+[3.917s] Level 1:colcon.colcon_core.shell:create_environment_hook('SerialCommsPkg', 'pythonpath_develop')
+[3.918s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/josh/robot-ws/src/build/SerialCommsPkg/share/SerialCommsPkg/hook/pythonpath_develop.ps1'
+[3.919s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/josh/robot-ws/src/build/SerialCommsPkg/share/SerialCommsPkg/hook/pythonpath_develop.dsv'
+[3.919s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/josh/robot-ws/src/build/SerialCommsPkg/share/SerialCommsPkg/hook/pythonpath_develop.sh'
+[3.921s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/josh/robot-ws/src/build/SerialCommsPkg' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PS1=\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ PYTHONPATH=/home/josh/robot-ws/src/build/SerialCommsPkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/josh/robot-ws/src/install/SerialCommsPkg/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/josh/robot-ws/src/build/SerialCommsPkg/build --no-deps symlink_data
+[3.922s] Level 1:colcon.colcon_core.environment:checking '/home/josh/robot-ws/src/install/SerialCommsPkg' for CMake module files
+[3.923s] Level 1:colcon.colcon_core.environment:checking '/home/josh/robot-ws/src/install/SerialCommsPkg' for CMake config files
+[3.925s] Level 1:colcon.colcon_core.environment:checking '/home/josh/robot-ws/src/install/SerialCommsPkg/lib'
+[3.925s] Level 1:colcon.colcon_core.environment:checking '/home/josh/robot-ws/src/install/SerialCommsPkg/bin'
+[3.926s] Level 1:colcon.colcon_core.environment:checking '/home/josh/robot-ws/src/install/SerialCommsPkg/lib/pkgconfig/SerialCommsPkg.pc'
+[3.927s] Level 1:colcon.colcon_core.environment:checking '/home/josh/robot-ws/src/install/SerialCommsPkg/lib/python3.12/site-packages'
+[3.927s] Level 1:colcon.colcon_core.shell:create_environment_hook('SerialCommsPkg', 'pythonpath')
+[3.927s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/josh/robot-ws/src/install/SerialCommsPkg/share/SerialCommsPkg/hook/pythonpath.ps1'
+[3.928s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/josh/robot-ws/src/install/SerialCommsPkg/share/SerialCommsPkg/hook/pythonpath.dsv'
+[3.929s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/josh/robot-ws/src/install/SerialCommsPkg/share/SerialCommsPkg/hook/pythonpath.sh'
+[3.929s] Level 1:colcon.colcon_core.environment:checking '/home/josh/robot-ws/src/install/SerialCommsPkg/bin'
+[3.929s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(SerialCommsPkg)
+[3.930s] INFO:colcon.colcon_core.shell:Creating package script '/home/josh/robot-ws/src/install/SerialCommsPkg/share/SerialCommsPkg/package.ps1'
+[3.931s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/josh/robot-ws/src/install/SerialCommsPkg/share/SerialCommsPkg/package.dsv'
+[3.931s] INFO:colcon.colcon_core.shell:Creating package script '/home/josh/robot-ws/src/install/SerialCommsPkg/share/SerialCommsPkg/package.sh'
+[3.932s] INFO:colcon.colcon_core.shell:Creating package script '/home/josh/robot-ws/src/install/SerialCommsPkg/share/SerialCommsPkg/package.bash'
+[3.932s] INFO:colcon.colcon_core.shell:Creating package script '/home/josh/robot-ws/src/install/SerialCommsPkg/share/SerialCommsPkg/package.zsh'
+[3.932s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/josh/robot-ws/src/install/SerialCommsPkg/share/colcon-core/packages/SerialCommsPkg)
+[3.933s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[3.933s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[3.933s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[3.933s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[3.952s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[3.952s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[3.953s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[4.019s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[4.019s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/josh/robot-ws/src/install/local_setup.ps1'
+[4.027s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/josh/robot-ws/src/install/_local_setup_util_ps1.py'
+[4.030s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/josh/robot-ws/src/install/setup.ps1'
+[4.032s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/josh/robot-ws/src/install/local_setup.sh'
+[4.034s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/josh/robot-ws/src/install/_local_setup_util_sh.py'
+[4.036s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/josh/robot-ws/src/install/setup.sh'
+[4.040s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/josh/robot-ws/src/install/local_setup.bash'
+[4.042s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/josh/robot-ws/src/install/setup.bash'
+[4.044s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/josh/robot-ws/src/install/local_setup.zsh'
+[4.045s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/josh/robot-ws/src/install/setup.zsh'

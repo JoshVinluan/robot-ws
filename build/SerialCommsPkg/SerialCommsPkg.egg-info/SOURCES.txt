@@ -1,0 +1,13 @@
+package.xml
+setup.cfg
+setup.py
+SerialCommsPkg/__init__.py
+SerialCommsPkg/serialInitialize.py
+SerialCommsPkg.egg-info/PKG-INFO
+SerialCommsPkg.egg-info/SOURCES.txt
+SerialCommsPkg.egg-info/dependency_links.txt
+SerialCommsPkg.egg-info/entry_points.txt
+SerialCommsPkg.egg-info/requires.txt
+SerialCommsPkg.egg-info/top_level.txt
+SerialCommsPkg.egg-info/zip-safe
+resource/SerialCommsPkg

@@ -1,0 +1,2 @@
+[console_scripts]
+serialInitialize = SerialCommsPkg.serialInitialize:main

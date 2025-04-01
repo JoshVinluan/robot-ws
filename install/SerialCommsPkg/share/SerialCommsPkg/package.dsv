@@ -1,0 +1,9 @@
+source;share/SerialCommsPkg/hook/pythonpath.ps1
+source;share/SerialCommsPkg/hook/pythonpath.dsv
+source;share/SerialCommsPkg/hook/pythonpath.sh
+source;share/SerialCommsPkg/hook/ament_prefix_path.ps1
+source;share/SerialCommsPkg/hook/ament_prefix_path.dsv
+source;share/SerialCommsPkg/hook/ament_prefix_path.sh
+source;../../build/SerialCommsPkg/share/SerialCommsPkg/hook/pythonpath_develop.ps1
+source;../../build/SerialCommsPkg/share/SerialCommsPkg/hook/pythonpath_develop.dsv
+source;../../build/SerialCommsPkg/share/SerialCommsPkg/hook/pythonpath_develop.sh
