@@ -49,6 +49,9 @@ class FirebaseListenerNode(Node):
             if Clean is True:
                 self.get_logger().info('Clean message is sent.')
                 self.toClean_publisher.publish(msg)
+            elif Clean is False:
+                self.get_logger().info('Stopping cleaning functions.')
+                self.toClean_publisher.publish(msg)   
                 
         except Exception as e:
             self.get_logger().error(f'Error processing Firebase data: {e}')

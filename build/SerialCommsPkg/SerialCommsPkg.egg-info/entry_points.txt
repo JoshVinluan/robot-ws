@@ -1,2 +1,3 @@
 [console_scripts]
+lidar_node = SerialCommsPkg.lidar_node:main
 serialInitialize = SerialCommsPkg.serialInitialize:main

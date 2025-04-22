@@ -21,6 +21,7 @@ setup(
     entry_points={
         'console_scripts': [
             "serialInitialize = SerialCommsPkg.serialInitialize:main",
+            "lidar_node = SerialCommsPkg.lidar_node:main",
         ],
     },
 )

@@ -1,0 +1,15 @@
+running develop
+running egg_info
+writing connectFirebasePkg.egg-info/PKG-INFO
+writing dependency_links to connectFirebasePkg.egg-info/dependency_links.txt
+writing entry points to connectFirebasePkg.egg-info/entry_points.txt
+writing requirements to connectFirebasePkg.egg-info/requires.txt
+writing top-level names to connectFirebasePkg.egg-info/top_level.txt
+reading manifest file 'connectFirebasePkg.egg-info/SOURCES.txt'
+writing manifest file 'connectFirebasePkg.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/josh/robot-ws/src/install/connectFirebasePkg/lib/python3.12/site-packages/connectFirebasePkg.egg-link (link to .)
+Installing firebase_listener_node script to /home/josh/robot-ws/src/install/connectFirebasePkg/lib/connectFirebasePkg
+
+Installed /home/josh/robot-ws/src/build/connectFirebasePkg
+running symlink_data

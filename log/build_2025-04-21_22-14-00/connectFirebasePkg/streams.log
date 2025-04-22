@@ -1,0 +1,17 @@
+[2.398s] Invoking command in '/home/josh/robot-ws/src/build/connectFirebasePkg': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/josh/robot-ws/src/build/connectFirebasePkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/josh/robot-ws/src/install/connectFirebasePkg/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/josh/robot-ws/src/build/connectFirebasePkg/build --no-deps symlink_data
+[2.959s] running develop
+[3.250s] running egg_info
+[3.278s] writing connectFirebasePkg.egg-info/PKG-INFO
+[3.278s] writing dependency_links to connectFirebasePkg.egg-info/dependency_links.txt
+[3.285s] writing entry points to connectFirebasePkg.egg-info/entry_points.txt
+[3.286s] writing requirements to connectFirebasePkg.egg-info/requires.txt
+[3.287s] writing top-level names to connectFirebasePkg.egg-info/top_level.txt
+[3.342s] reading manifest file 'connectFirebasePkg.egg-info/SOURCES.txt'
+[3.343s] writing manifest file 'connectFirebasePkg.egg-info/SOURCES.txt'
+[3.373s] running build_ext
+[3.373s] Creating /home/josh/robot-ws/src/install/connectFirebasePkg/lib/python3.12/site-packages/connectFirebasePkg.egg-link (link to .)
+[3.375s] Installing firebase_listener_node script to /home/josh/robot-ws/src/install/connectFirebasePkg/lib/connectFirebasePkg
+[3.375s] 
+[3.375s] Installed /home/josh/robot-ws/src/build/connectFirebasePkg
+[3.375s] running symlink_data
+[3.530s] Invoked command in '/home/josh/robot-ws/src/build/connectFirebasePkg' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/josh/robot-ws/src/build/connectFirebasePkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/josh/robot-ws/src/install/connectFirebasePkg/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/josh/robot-ws/src/build/connectFirebasePkg/build --no-deps symlink_data

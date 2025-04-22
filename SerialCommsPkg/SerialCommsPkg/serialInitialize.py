@@ -3,8 +3,12 @@ from rclpy.node import Node
 from example_interfaces.msg import Bool
 from std_msgs.msg import Int32
 from geometry_msgs.msg import PointStamped, Twist
+from sensor_msgs.msg import LaserScan
 import serial
 import threading
+import math
+from tf2_ros import TransformBroadcaster
+from geometry_msgs.msg import TransformStamped
 
 class SerialInitializeNode(Node):
     def __init__(self):
@@ -52,18 +56,43 @@ class SerialInitializeNode(Node):
             'sensor_distance',
             10
         )
-        self.point_publisher = self.create_publisher(
-            PointStamped,
-            'sensor_point',
+        '''self.laser_scan_publisher= self.create_publisher(
+            LaserScan,
+            'scan',
             10
-        )
+        )'''
         #### END OF: Publishers for sensor readings ####
+
+        '''self.steps_per_revolution = 2048
+        self.angle_increment = 2 * math.pi / self.steps_per_revolution
+        self.current_step = 0
+        self.distances = [float('inf')] * self.steps_per_revolution'''
 
         #### Start a thread to continuously read from the serial port ####
         self.read_thread = threading.Thread(target=self.tofScan)
         self.read_thread.daemon = True
         self.read_thread.start()
         #### END OF: Start a thread to continuously read from the serial port ####
+
+        '''self.tf_broadcaster = TransformBroadcaster(self)
+        self.tf_timer = self.create_timer(0.1, self.broadcast_laser_frame)
+
+    def broadcast_laser_frame(self):
+        t = TransformStamped()
+        t.header.stamp = self.get_clock().now().to_msg()
+        t.header.frame_id = 'base_link'
+        t.child_frame_id = 'laser_frame'
+
+        t.transform.translation.x = 0.2
+        t.transform.translation.y = 0.0
+        t.transform.translation.z = 0.1
+
+        t.transform.rotation.x = 0.0
+        t.transform.rotation.y = 0.0
+        t.transform.rotation.z = 0.0
+        t.transform.rotation.w = 1.0
+
+        self.tf_broadcaster.sendTransform(t)'''
 
     def to_clean_callback(self, msg: Bool):
 
@@ -113,14 +142,12 @@ class SerialInitializeNode(Node):
                                     self.tof_publisher.publish(msg)
                                     self.get_logger().info(f"Published sensor distance: {msg.data}")
 
-                                    # Publish PointStamped message
-                                    point_msg = PointStamped()
-                                    point_msg.header.stamp = self.get_clock().now().to_msg()
-                                    point_msg.header.frame_id = "laser_frame"
-                                    point_msg.point.x = 0.0
-                                    point_msg.point.y = 0.0
-                                    point_msg.point.z = float(distance) / 1000.0  # Convert mm to meters
-                                    self.point_publisher.publish(point_msg)                                
+                                    
+                                    '''self.distances[self.current_step] = distance / 1000.0  # Convert mm to meters    
+                                    self.current_step = (self.current_step + 1) % self.steps_per_revolution
+
+                                    if self.current_step == 0:
+                                        self.publish_laser_scan()                '''       
                                 except ValueError:
                                     self.get_logger().error(f"Invalid distance value: {data}")
                     
@@ -141,6 +168,24 @@ class SerialInitializeNode(Node):
             except serial.SerialException as e:
                 self.get_logger().error(f"Error reading from serial port: {e}")
                 break
+    
+    '''
+    def publish_laser_scan(self):
+        scan_msg = LaserScan()
+        scan_msg.header.stamp = self.get_clock().now().to_msg()
+        scan_msg.header.frame_id = 'laser_frame'
+        scan_msg.angle_min = 0.0
+        scan_msg.angle_max = 2 * math.pi
+        scan_msg.angle_increment = self.angle_increment
+        scan_msg.range_min = 0.02  # Minimum valid range of the sensor
+        scan_msg.range_max = 4.0   # Maximum valid range of the sensor
+        scan_msg.ranges = self.distances  # Use the distances array
+
+        self.laser_scan_publisher.publish(scan_msg)
+        self.get_logger().info('Published laser scan data.')
+
+        # Reset distances for the next revolution
+        self.distances = [float('inf')] * self.steps_per_revolution'''
 
 def main(args=None):
     rclpy.init(args=args)

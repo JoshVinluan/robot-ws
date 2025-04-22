@@ -1,0 +1,18 @@
+[1.624s] Invoking command in '/home/josh/robot-ws/src/build/SerialCommsPkg': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/josh/robot-ws/src/build/SerialCommsPkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/josh/robot-ws/src/install/SerialCommsPkg/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/josh/robot-ws/src/build/SerialCommsPkg/build --no-deps symlink_data
+[2.106s] running develop
+[2.381s] running egg_info
+[2.409s] writing SerialCommsPkg.egg-info/PKG-INFO
+[2.409s] writing dependency_links to SerialCommsPkg.egg-info/dependency_links.txt
+[2.410s] writing entry points to SerialCommsPkg.egg-info/entry_points.txt
+[2.411s] writing requirements to SerialCommsPkg.egg-info/requires.txt
+[2.412s] writing top-level names to SerialCommsPkg.egg-info/top_level.txt
+[2.466s] reading manifest file 'SerialCommsPkg.egg-info/SOURCES.txt'
+[2.467s] writing manifest file 'SerialCommsPkg.egg-info/SOURCES.txt'
+[2.499s] running build_ext
+[2.499s] Creating /home/josh/robot-ws/src/install/SerialCommsPkg/lib/python3.12/site-packages/SerialCommsPkg.egg-link (link to .)
+[2.501s] Installing lidar_node script to /home/josh/robot-ws/src/install/SerialCommsPkg/lib/SerialCommsPkg
+[2.501s] Installing serialInitialize script to /home/josh/robot-ws/src/install/SerialCommsPkg/lib/SerialCommsPkg
+[2.502s] 
+[2.502s] Installed /home/josh/robot-ws/src/build/SerialCommsPkg
+[2.502s] running symlink_data
+[2.646s] Invoked command in '/home/josh/robot-ws/src/build/SerialCommsPkg' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/josh/robot-ws/src/build/SerialCommsPkg/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/josh/robot-ws/src/install/SerialCommsPkg/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/josh/robot-ws/src/build/SerialCommsPkg/build --no-deps symlink_data

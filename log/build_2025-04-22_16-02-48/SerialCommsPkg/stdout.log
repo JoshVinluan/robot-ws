@@ -1,0 +1,16 @@
+running develop
+running egg_info
+writing SerialCommsPkg.egg-info/PKG-INFO
+writing dependency_links to SerialCommsPkg.egg-info/dependency_links.txt
+writing entry points to SerialCommsPkg.egg-info/entry_points.txt
+writing requirements to SerialCommsPkg.egg-info/requires.txt
+writing top-level names to SerialCommsPkg.egg-info/top_level.txt
+reading manifest file 'SerialCommsPkg.egg-info/SOURCES.txt'
+writing manifest file 'SerialCommsPkg.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/josh/robot-ws/src/install/SerialCommsPkg/lib/python3.12/site-packages/SerialCommsPkg.egg-link (link to .)
+Installing lidar_node script to /home/josh/robot-ws/src/install/SerialCommsPkg/lib/SerialCommsPkg
+Installing serialInitialize script to /home/josh/robot-ws/src/install/SerialCommsPkg/lib/SerialCommsPkg
+
+Installed /home/josh/robot-ws/src/build/SerialCommsPkg
+running symlink_data
