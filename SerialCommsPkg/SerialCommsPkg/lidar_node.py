@@ -40,8 +40,10 @@ class LidarPublisher(Node):
         scan.angle_min = 0.0
         scan.angle_max = 2 * 3.14159
         scan.angle_increment = (scan.angle_max - scan.angle_min) / 2048
-        scan.time_increment = 1.0 / (18.0 * 2048)  
-        scan.scan_time = (self.get_clock().now() - self.last_scan_time).nanoseconds / 1e9
+
+        rotation_time = 7.13
+        scan.time_increment = rotation_time/2048
+        scan.scan_time = rotation_time
 
         scan.range_min = 0.02
         scan.range_max = 8.0
