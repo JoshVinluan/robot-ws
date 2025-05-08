@@ -5,6 +5,7 @@ from geometry_msgs.msg import Twist
 import firebase_admin
 from firebase_admin import credentials, db
 import atexit
+import pygame
 
 class FirebaseListenerNode(Node):
     def __init__(self):
@@ -15,6 +16,7 @@ class FirebaseListenerNode(Node):
             'databaseURL': 'https://testing-a04d9-default-rtdb.firebaseio.com/'
         })
         
+        pygame.mixer.init()
         
         # This is from firebase's database.
         self.clean_ref = db.reference('robot_commands/Clean')
@@ -64,9 +66,11 @@ class FirebaseListenerNode(Node):
             if Clean is True:
                 self.get_logger().info('Clean message is sent.')
                 self.toClean_publisher.publish(msg)
+                self.play_audio('/home/josh/robot-ws/src/connectFirebasePkg/connectFirebasePkg/audio/robot_ready.wav')
             elif Clean is False:
                 self.get_logger().info('Stopping cleaning functions.')
-                self.toClean_publisher.publish(msg)   
+                self.toClean_publisher.publish(msg)
+                self.play_audio('/home/josh/robot-ws/src/connectFirebasePkg/connectFirebasePkg/audio/robot_sneeze.wav')
                 
         except Exception as e:
             self.get_logger().error(f"Error processing 'Clean' data: {e}")
@@ -122,6 +126,14 @@ class FirebaseListenerNode(Node):
             self.get_logger().info('Disconnected from Firebase.')
         except Exception as e:
             pass
+    
+    def play_audio(self, file_path):
+        try:
+            pygame.mixer.music.load(file_path)
+            pygame.mixer.music.set_volume(1.0)
+            pygame.mixer.music.play()
+        except Exception as e:
+            self.get_logger().error(f"Error playing audio: {e}")
 
 def main(args=None):
     rclpy.init(args=args)
