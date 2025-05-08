@@ -41,6 +41,29 @@ class SerialInitializeNode(Node):
         self.get_logger().info('Subscriber to "toClean" topic initialized.')
         #### END OF: Subscriber to "toClean" topic ####
 
+        #### Subscribe to "toVacuum" ####
+        self.toVacuum_subscriber = self.create_subscription(
+            Bool,
+            'toVacuum',
+            self.to_vacuum_callback,
+            10
+        )
+        self.get_logger().info('Subscriber to "toVacuum" topic initialized.')
+        #### END OF: Subscribe to "toVacuum" ####
+
+        #### Subscribe to "toWiper" ####
+        self.toWiper_subscriber = self.create_subscription(
+            Bool,
+            'toWiper',
+            self.to_wiper_callback,
+            10
+        )
+        self.get_logger().info('Subscriber to "toWiper" topic initialized.')
+        #### END OF: Subscribe to "toWiper" ####
+
+
+
+
         self.cmd_vel_stamped_subscriber = self.create_subscription(
             Twist,
             'cmd_vel',
@@ -56,17 +79,6 @@ class SerialInitializeNode(Node):
             'sensor_distance',
             10
         )
-        '''self.laser_scan_publisher= self.create_publisher(
-            LaserScan,
-            'scan',
-            10
-        )'''
-        #### END OF: Publishers for sensor readings ####
-
-        '''self.steps_per_revolution = 2048
-        self.angle_increment = 2 * math.pi / self.steps_per_revolution
-        self.current_step = 0
-        self.distances = [float('inf')] * self.steps_per_revolution'''
 
         #### Start a thread to continuously read from the serial port ####
         self.read_thread = threading.Thread(target=self.tofScan)
@@ -74,32 +86,42 @@ class SerialInitializeNode(Node):
         self.read_thread.start()
         #### END OF: Start a thread to continuously read from the serial port ####
 
-        '''self.tf_broadcaster = TransformBroadcaster(self)
-        self.tf_timer = self.create_timer(0.1, self.broadcast_laser_frame)
+    def to_vacuum_callback(self, msg: Bool):
+        try:
+            if self.serial_connection.is_open:
+                if msg.data:
+                    message = "Vacuum message received: True\n"
+                else:
+                    message = "Vacuum message received: False\n"
+                self.serial_connection.write(message.encode())
+                self.get_logger().info(f"Sent to ESP32: {message.strip()}")
+            else:
+                self.get_logger().error("Serial connection is not open.")
+        except Exception as e:
+            self.get_logger().error(f"Error writing to serial port: {e}")
 
-    def broadcast_laser_frame(self):
-        t = TransformStamped()
-        t.header.stamp = self.get_clock().now().to_msg()
-        t.header.frame_id = 'base_link'
-        t.child_frame_id = 'laser_frame'
-
-        t.transform.translation.x = 0.2
-        t.transform.translation.y = 0.0
-        t.transform.translation.z = 0.1
-
-        t.transform.rotation.x = 0.0
-        t.transform.rotation.y = 0.0
-        t.transform.rotation.z = 0.0
-        t.transform.rotation.w = 1.0
-
-        self.tf_broadcaster.sendTransform(t)'''
+    def to_wiper_callback(self, msg: Bool):
+        try:
+            if self.serial_connection.is_open:
+                if msg.data:
+                    message = "Wiper message received: True\n"
+                else:
+                    message = "Wiper message received: False\n"
+                self.serial_connection.write(message.encode())
+                self.get_logger().info(f"Sent to ESP32: {message.strip()}")
+            else:
+                self.get_logger().error("Serial connection is not open.")
+        except Exception as e:
+            self.get_logger().error(f"Error writing to serial port: {e}")
 
     def to_clean_callback(self, msg: Bool):
-
         # Send the message to ESP32 via serial
         try:
             if self.serial_connection.is_open:
-                message = f"Bool message received: {msg.data}\n"
+                if msg.data:
+                    message = "Clean message received: True\n"
+                else:
+                    message = "Clean message received: False\n"
                 self.serial_connection.write(message.encode())
                 self.get_logger().info(f"Sent to ESP32: {message.strip()}")
             else:
@@ -141,24 +163,11 @@ class SerialInitializeNode(Node):
                                     msg.data = distance
                                     self.tof_publisher.publish(msg)
                                     self.get_logger().info(f"Published sensor distance: {msg.data}")
-
-                                    
-                                    '''self.distances[self.current_step] = distance / 1000.0  # Convert mm to meters    
-                                    self.current_step = (self.current_step + 1) % self.steps_per_revolution
-
-                                    if self.current_step == 0:
-                                        self.publish_laser_scan()                '''       
+    
                                 except ValueError:
                                     self.get_logger().error(f"Invalid distance value: {data}")
                     
-                            '''
-                            if data.startswith("Bool message received:"):
-                                bool_value = data.split(":")[-1].strip().lower() == "true"
-                                msg = Bool()
-                                msg.data = bool_value
-                                #self.fromESP32_publisher.publish(msg)
-                                self.get_logger().info(f"Published Bool message: {msg.data}")'
-                            '''
+
                     except UnicodeDecodeError as e:
                         self.get_logger().error(f"Decoding error: {e}")
                     
@@ -169,23 +178,6 @@ class SerialInitializeNode(Node):
                 self.get_logger().error(f"Error reading from serial port: {e}")
                 break
     
-    '''
-    def publish_laser_scan(self):
-        scan_msg = LaserScan()
-        scan_msg.header.stamp = self.get_clock().now().to_msg()
-        scan_msg.header.frame_id = 'laser_frame'
-        scan_msg.angle_min = 0.0
-        scan_msg.angle_max = 2 * math.pi
-        scan_msg.angle_increment = self.angle_increment
-        scan_msg.range_min = 0.02  # Minimum valid range of the sensor
-        scan_msg.range_max = 4.0   # Maximum valid range of the sensor
-        scan_msg.ranges = self.distances  # Use the distances array
-
-        self.laser_scan_publisher.publish(scan_msg)
-        self.get_logger().info('Published laser scan data.')
-
-        # Reset distances for the next revolution
-        self.distances = [float('inf')] * self.steps_per_revolution'''
 
 def main(args=None):
     rclpy.init(args=args)
