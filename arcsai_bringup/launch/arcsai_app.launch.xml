@@ -1,0 +1,5 @@
+<launch>
+    <node pkg="connectFirebasePkg" exec="firebase_listener_node"/>
+    <node pkg="SerialCommsPkg" exec="serialInitialize"/>
+    <node pkg="SerialCommsPkg" exec="lidar_node"/>
+</launch>
