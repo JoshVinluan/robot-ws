@@ -61,9 +61,6 @@ class SerialInitializeNode(Node):
         self.get_logger().info('Subscriber to "toWiper" topic initialized.')
         #### END OF: Subscribe to "toWiper" ####
 
-
-
-
         self.cmd_vel_stamped_subscriber = self.create_subscription(
             Twist,
             'cmd_vel',
@@ -73,18 +70,6 @@ class SerialInitializeNode(Node):
         self.get_logger().info('Subscriber to "cmd_vel" topic initialized.')
         #### END OF: Subscriber to "cmd_vel_stamped" topic ####
 
-        #### Publishers for sensor readings ####
-        self.tof_publisher = self.create_publisher(
-            Int32,
-            'sensor_distance',
-            10
-        )
-
-        #### Start a thread to continuously read from the serial port ####
-        self.read_thread = threading.Thread(target=self.tofScan)
-        self.read_thread.daemon = True
-        self.read_thread.start()
-        #### END OF: Start a thread to continuously read from the serial port ####
 
     def to_vacuum_callback(self, msg: Bool):
         try:
@@ -141,42 +126,7 @@ class SerialInitializeNode(Node):
         except Exception as e:
             self.get_logger().error(f"Error writing to serial port: {e}")
     
-    def tofScan(self):
-        # Continuously read from the serial port
-        while rclpy.ok():
-            try:
-                if self.serial_connection.is_open:
-                    raw_data = self.serial_connection.readline()
-                    try:
-                        data = raw_data.decode('utf-8', errors='ignore').strip()
-                        if data:
-                            self.get_logger().info(f"Received from ESP32: {data}")
-
-                            # Parse sensor readings and publish to ROS2 topic
-                            if data.startswith("Distance:"):
-                                try:
-                                    # Extract the part after "Distance:"
-                                    distance_str = data.split(":")[-1].strip()
-                                    # Remove the " mm" suffix and convert to integer
-                                    distance = int(distance_str.replace(" mm", "").strip())
-                                    msg = Int32()
-                                    msg.data = distance
-                                    self.tof_publisher.publish(msg)
-                                    self.get_logger().info(f"Published sensor distance: {msg.data}")
     
-                                except ValueError:
-                                    self.get_logger().error(f"Invalid distance value: {data}")
-                    
-
-                    except UnicodeDecodeError as e:
-                        self.get_logger().error(f"Decoding error: {e}")
-                    
-                else:
-                    self.get_logger().error("Serial connection is not open.")
-                    break
-            except serial.SerialException as e:
-                self.get_logger().error(f"Error reading from serial port: {e}")
-                break
     
 
 def main(args=None):

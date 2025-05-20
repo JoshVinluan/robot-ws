@@ -17,21 +17,25 @@ class FirebaseListenerNode(Node):
         })
         
         pygame.mixer.init()
+
+        
         
         # This is from firebase's database.
         self.clean_ref = db.reference('robot_commands/Clean')
         self.vacuum_ref = db.reference('features/vacuum')
         self.wiper_ref = db.reference('features/wiper')
-
+        self.movement_ref = db.reference('robot_commands/movement')
 
         self.toClean_publisher = self.create_publisher(Bool, 'toClean', 10)
         self.toVacuum_publisher = self.create_publisher(Bool, 'toVacuum', 10)
         self.toWiper_publisher = self.create_publisher(Bool, 'toWiper', 10)
+        self.cmd_vel_publisher = self.create_publisher(Twist, 'cmd_vel', 10)
 
         # Check for updates
         self.clean_ref.listen(self.on_clean_changed)
         self.vacuum_ref.listen(self.on_vacuum_changed)
         self.wiper_ref.listen(self.on_wiper_changed)
+        self.movement_ref.listen(self.on_movement_changed)
 
         # Set initial connection status to true
         self.update_status()
@@ -113,6 +117,41 @@ class FirebaseListenerNode(Node):
         except Exception as e:
             self.get_logger().error(f"Error processing 'Wiper' data: {e}")
 
+    def on_movement_changed(self, event):
+        try:
+            movement_command = event.data
+
+            if movement_command is None:
+                self.get_logger().info('No movement command received.')
+                return
+            
+            self.get_logger().info(f'Movement command received: {movement_command}')
+
+
+            twist_msg = Twist()
+            if movement_command == 'forward':
+                twist_msg.linear.x = 0.1 # Move forward
+                twist_msg.angular.z = 0.0
+            elif movement_command == 'backward':
+                twist_msg.linear.x = -0.1 # Move backward
+                twist_msg.angular.z = 0.0
+            elif movement_command == 'left':
+                twist_msg.linear.x = 0.0 
+                twist_msg.angular.z = 1.0 # Turn left
+            elif movement_command == 'right':
+                twist_msg.linear.x = 0.0
+                twist_msg.angular.z = -1.0 # Turn right
+            elif movement_command == 'stop':
+                twist_msg.linear.x = 0.0
+                twist_msg.angular.z = 0.0 # Stop
+            else:
+                self.get_logger().info('Unknown movement command received.')
+                return
+            
+            self.cmd_vel_publisher.publish(twist_msg)
+            self.get_logger().info(f'Published movement command: {twist_msg}')
+        except Exception as e:
+            self.get_logger().error(f"Error processing 'Movement' data: {e}")
 
     def update_status(self):
         ref = db.reference('device_status/connected')
